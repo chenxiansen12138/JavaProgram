@@ -167,10 +167,9 @@ public class FluxStu {
         //subscribeOn: 改变订阅者所在线程池
 //        Flux.range(1, 10).publishOn(Schedulers.single())//指定在哪一个线程池将这个流的数据和操作执行
 //                .log().subscribeOn(Schedulers.single()).subscribe();
-        Scheduler scheduler = Schedulers.newParallel("parallel-1", 4);
+        Scheduler scheduler = Schedulers.newParallel("parallel-1", 10);
         Flux<String> fl = Flux.range(1, 50).map(integer -> integer + 1).log().publishOn(scheduler).map(integer -> "value:" + integer).log();
         new Thread(()-> fl.subscribe(System.out::println)).start();
-
         Thread.sleep(10000);
     }
 }
