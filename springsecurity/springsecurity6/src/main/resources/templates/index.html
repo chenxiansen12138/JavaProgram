@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Security</title>
+</head>
+<body>
+<h1>Hello Security!!!</h1>
+<a th:href="@{/logout}">Log Out</a>
+<form th:action="@{/createUser}" method="post">
+    姓名<input type="text" name="username">
+    密码<input type="password" name="password">
+    <button>提交</button>
+</form>
+</body>
+</html>
