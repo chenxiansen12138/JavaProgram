@@ -1,10 +1,12 @@
 package com.chen.xiansen.springsecurity6.config;
 
 import com.alibaba.fastjson2.JSON;
+import com.chen.xiansen.springsecurity6.component.*;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +17,7 @@ import java.util.Map;
 
 @Configuration
 @EnableWebSecurity //开启springsecurity的自定义配置
+@EnableMethodSecurity //开启基于方法的注解
 public class WebSecurityConfiguration {
 
     @Resource

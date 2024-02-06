@@ -1,4 +1,4 @@
-package com.chen.xiansen.springsecurity6.controller;
+package com.chen.xiansen.springsecurity6.controller.example;
 
 import com.chen.xiansen.springsecurity6.entity.User;
 import com.chen.xiansen.springsecurity6.service.UserService;

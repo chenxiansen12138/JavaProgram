@@ -1,4 +1,4 @@
-package com.chen.xiansen.springsecurity6.config;
+package com.chen.xiansen.springsecurity6.component;
 
 import com.alibaba.fastjson2.JSON;
 import jakarta.servlet.FilterChain;

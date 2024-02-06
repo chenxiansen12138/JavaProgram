@@ -4,6 +4,14 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://192.168.10.46/security-demo
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: cf5e5d85750a374b3788
+            client-secret: 45f54d166b4c4ddd610d70eb0a7834fb1499c026
+
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
