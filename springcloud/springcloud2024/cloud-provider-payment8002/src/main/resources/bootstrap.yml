@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    consul:
+      host: 192.168.10.46
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+      config:
+        profile-separator: "-"
+        format: yaml
+        watch:
+          wait-time: 10

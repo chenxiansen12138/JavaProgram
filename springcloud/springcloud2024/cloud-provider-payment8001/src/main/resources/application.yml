@@ -1,0 +1,25 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /payment
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.46:3306/cloud2024?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  profiles:
+    active: dev
+mybatis:
+  config-location: classpath:META-INF/mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+
+
+#zipkin
+#management:
+#  zipkin:
+#    tracing:
+#      endpoint: http://192.168.10.46:9411/api/v2/spans
+#  tracing:
+#    sampling:
+#      probability: 1.0 #采样率默认为0.1(0.1就是10次只能有一次被记录下来),值越大收集越及时
