@@ -31,3 +31,13 @@ spring:
             #- Query=username, \d+ #访问时带有username参数,并且为整数
             #- RemoteAddr=192.168.10.1/24 #限制外部访问时的ip
             #- Method=GET,POST #限制访问方式
+            #- name: Customize
+            #  args:
+            #    userType: diamond
+            - Customize=diamond
+        - id: pay_route3
+          uri: lb://cloud-provider-payment
+          predicates:
+            - Path=/payment/gateway/filter/get/**
+          filters:
+            - AddRequestHeader=X-Request-Ch,Chen
