@@ -2,15 +2,13 @@ package com.chen.xiansen.controller;
 
 import cn.hutool.core.lang.UUID;
 import com.alibaba.fastjson2.JSON;
+import com.chen.xiansen.form.ParamsForm;
 import com.chen.xiansen.response.ResultData;
 import com.chen.xiansen.service.PaymentService;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpHeaders;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -31,9 +29,10 @@ public class GatewayController {
     }
 
     @GetMapping("/gateway/filter/get")
-    public ResultData<String> filterInit(@RequestHeader HttpHeaders headers) {
+    public ResultData<String> filterHeader(@RequestHeader HttpHeaders headers, ParamsForm form) {
         String existKey = "";
         String existVal = "";
+        System.out.println(form.getUsername()+":"+form.getPassword());
         for (Map.Entry<String, List<String>> en : headers.entrySet()) {
             System.out.println("en = " + en.getKey() + ":" + en.getValue().getFirst());
             if (en.getKey().equalsIgnoreCase("X-Request-Ch")) {
@@ -42,8 +41,10 @@ public class GatewayController {
             }
         }
         if (StringUtils.isEmpty(existVal)) {
-            return ResultData.success("this request don't contains expected headers");
+            return ResultData.success("this request don't contains expected headers,password=" + form.getPassword());
         }
-        return ResultData.success("this request contains" + existKey + ":" + existVal);
+        return ResultData.success("this request contains" + existKey + ":" + existVal + ",password=" + form.getPassword());
     }
+
+
 }

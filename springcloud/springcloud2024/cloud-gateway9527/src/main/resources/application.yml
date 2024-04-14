@@ -39,5 +39,27 @@ spring:
           uri: lb://cloud-provider-payment
           predicates:
             - Path=/payment/gateway/filter/get/**
+            #- Path=/hide/show/{segment}
           filters:
-            - AddRequestHeader=X-Request-Ch,Chen
+            #增加请求头
+#            - AddRequestHeader=X-Request-Ch,Chen
+#            #删除请求头
+#            - RemoveRequestHeader=X-Request-Attack
+#            #修改请求头
+#            - SetRequestHeader=X-Request-Ch,Hao
+#            #添加请求参数
+#            - AddRequestParameter=password,123456
+#            #移除请求参数
+#            - RemoveRequestParameter=username
+#            #添加响应头
+#            - AddResponseHeader=X-Request-Response,ChenzzZ
+#            #删除响应头
+#            - RemoveResponseHeader=Content-Type
+#            #修改响应头
+#            - SetResponseHeader=Date,2044-05-03
+            #自动添加正确路径的头配置
+            #- PrefixPath=/payment
+            #占位符配置路径
+            #- SetPath=/payment/gateway/filter/{segment}
+            #重定向
+            - RedirectTo=302,https://www.baidu.com/
