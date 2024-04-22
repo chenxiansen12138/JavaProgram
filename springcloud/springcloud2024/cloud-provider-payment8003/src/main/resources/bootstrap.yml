@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.46:8848
+        username: nacos
+        password: nacos
+  profiles:
+    active: dev

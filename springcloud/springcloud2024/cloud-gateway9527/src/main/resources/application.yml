@@ -62,4 +62,5 @@ spring:
             #占位符配置路径
             #- SetPath=/payment/gateway/filter/{segment}
             #重定向
-            - RedirectTo=302,https://www.baidu.com/
+            #- RedirectTo=302,https://www.baidu.com/
+            - Customize=status

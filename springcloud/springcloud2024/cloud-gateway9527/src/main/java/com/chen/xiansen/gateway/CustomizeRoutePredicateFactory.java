@@ -30,6 +30,7 @@ public class CustomizeRoutePredicateFactory extends AbstractRoutePredicateFactor
 
     @Override
     public Predicate<ServerWebExchange> apply(CustomizeRoutePredicateFactory.Config config) {
+
         return exchange -> {
             String userType = exchange.getRequest().getQueryParams().getFirst("userType");
             if (userType == null) return false;
