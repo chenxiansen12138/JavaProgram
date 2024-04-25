@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.46:8848
+        username: nacos
+        password: nacos
+      config:
+        file-extension: yaml
+        server-addr: 192.168.10.46:8848
+        namespace: afc55c2f-604c-4ce2-91aa-b33ad70d80ac
+        group: NORMAL_GROUP
+

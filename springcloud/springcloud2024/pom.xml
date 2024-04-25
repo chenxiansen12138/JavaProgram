@@ -16,6 +16,8 @@
         <module>cloud-consumer-feign8091</module>
         <module>cloud-gateway9527</module>
         <module>cloud-provider-payment8003</module>
+        <module>cloud-consumer-order8092</module>
+        <module>cloudalibaba-nacos-client3377</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

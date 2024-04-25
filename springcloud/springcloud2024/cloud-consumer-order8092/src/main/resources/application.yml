@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.46:8848
+        username: nacos
+        password: nacos
+server:
+  servlet:
+    context-path: /consumer
+  port: 8092
