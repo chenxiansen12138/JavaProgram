@@ -7,7 +7,7 @@ spring:
     name: cloud-consumer-feign
   cloud:
     consul:
-      host: 192.168.10.46
+      host: 192.168.1.12
       port: 8500
       discovery:
         heartbeat:
@@ -129,7 +129,7 @@ resilience4j:
 #management:
 #  zipkin:
 #    tracing:
-#      endpoint: http://192.168.10.46:9411/api/v2/spans
+#      endpoint: http://192.168.1.12:9411/api/v2/spans
 #  tracing:
 #    sampling:
 #      probability: 1.0
